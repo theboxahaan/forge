@@ -1,0 +1,27 @@
+forge ~> create new function objects from existing ones
+--------------------------------------------------------
+
+[x] create new class <function> object from an existing object
+	[x] the following works -
+
+	import forge
+	def foo(acc=[]):
+		acc.append('a')
+		print(acc)
+	
+	o1, o2 = forge.forge(foo), forge.forge(foo)
+
+[.] Debug why presently forge doesn't work with class <method> functions i.e.
+    the following does not work
+	
+	import forge
+	class A:
+		def __init__(self):
+			self.foo = forge.forge(self.foo)
+		
+		def foo(self, acc=[]):
+			acc.append('a')
+			print(acc)
+	
+
+
